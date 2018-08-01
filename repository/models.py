@@ -12,5 +12,8 @@ class Repository(models.Model):
     language = models.CharField(max_length=32, blank=True, null=True)
     watchers_count = models.PositiveIntegerField()
 
+    class Meta:
+        verbose_name_plural = "Repositories"
+
     def __str__(self):
         return self.name
