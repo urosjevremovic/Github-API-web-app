@@ -9,6 +9,7 @@ djangorestframework = "*"
 requests = "*"
 pillow = "*"
 pipreqs = "*"
+coreapi = "*"
 
 [dev-packages]
 
