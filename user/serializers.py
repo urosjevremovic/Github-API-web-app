@@ -7,5 +7,5 @@ class GitUserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = GitUser
-        fields = ['username', 'avatar']
+        fields = ['username', 'avatar', 'repositories']
         lookup_field = 'username'

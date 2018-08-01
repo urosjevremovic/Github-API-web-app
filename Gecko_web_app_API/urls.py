@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls.static import static
-from django.urls import path
+from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
 from Gecko_web_app_API import settings
@@ -28,6 +28,8 @@ router.register('repository', RepositoryViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api-auth/', include('rest_framework.urls')),
+    path('api/v1/rest-auth/', include('rest_auth.urls')),
 ]
 
 urlpatterns += router.urls

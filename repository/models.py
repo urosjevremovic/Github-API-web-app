@@ -5,7 +5,7 @@ from user.models import GitUser
 
 class Repository(models.Model):
 
-    owner = models.ForeignKey(GitUser, on_delete=models.CASCADE)
+    owner = models.ForeignKey(GitUser, on_delete=models.CASCADE, related_name='repositories')
     name = models.CharField(max_length=32)
     description = models.TextField(null=True, blank=True)
     url = models.URLField()
