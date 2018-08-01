@@ -8,6 +8,7 @@ django = "*"
 djangorestframework = "*"
 requests = "*"
 pillow = "*"
+pipreqs = "*"
 
 [dev-packages]
 
