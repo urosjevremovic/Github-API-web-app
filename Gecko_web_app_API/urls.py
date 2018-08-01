@@ -20,10 +20,10 @@ from rest_framework.routers import DefaultRouter
 
 from Gecko_web_app_API import settings
 from repository.views import RepositoryViewSet
-from user.views import UserViewSet
+from user.views import GitUserViewSet
 
 router = DefaultRouter()
-router.register('users', UserViewSet)
+router.register('gituser', GitUserViewSet)
 router.register('repository', RepositoryViewSet)
 
 urlpatterns = [

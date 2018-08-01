@@ -56,10 +56,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'Gecko_web_app_API.urls'
 
-AUTH_USER_MODEL = 'user.User'
-
-USERNAME = 'andrew'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -133,6 +129,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES':
-        ('rest_framework.permissions.AllowAny', ),
+        ('rest_framework.permissions.IsAuthenticatedOrReadOnly', ),
     'TEST_REQUEST_DEFAULT_FORMAT': 'json'
 }

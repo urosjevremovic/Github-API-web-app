@@ -1,10 +1,11 @@
 from rest_framework import serializers
 
-from user.models import User
+from user.models import GitUser
 
 
-class UserSerializer(serializers.ModelSerializer):
+class GitUserSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = User
-        fields = ['username', 'password', 'email', 'avatar']
+        model = GitUser
+        fields = ['username', 'avatar']
+        lookup_field = 'username'

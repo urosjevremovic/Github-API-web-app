@@ -1,6 +1,11 @@
 from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin
 
-from user.models import User
+from user.models import GitUser
 
-admin.site.register(User, UserAdmin)
+
+class GitUserAdmin(admin.ModelAdmin):
+    list_display = ('username', 'avatar')
+    list_filter = ('username', 'avatar')
+
+
+admin.site.register(GitUser, GitUserAdmin)

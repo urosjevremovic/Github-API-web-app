@@ -20,5 +20,17 @@ def user_data_by_username(username):
     except (TypeError, AttributeError):
         pass
 
-    return user_data
+    url_2 = url + '/repos'
+    data = requests.get(url_2.format(username)).json()
+    repos = []
 
+    for each in data:
+        repo_data = dict()
+        repo_data['name'] = each['name']
+        repo_data['language'] = each['language']
+        repo_data['url'] = each['svn_url']
+        repo_data['watchers_count'] = each['watchers_count']
+        repo_data['description'] = each['description']
+        repos.append(repo_data)
+
+    return user_data, repos
